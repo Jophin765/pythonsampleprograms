@@ -35,10 +35,7 @@ def transaction_history(*transactions):
 
 
 def loan_eligibility_check(balance, salary, cibil_score=650):
-    if balance >= 5000 and salary >= 15000 and cibil_score >= 600:
-        return True
-    else:
-        return False
+    return bool(balance >= 5000 and salary >= 15000 and cibil_score >= 600)
 
 calculate_interest = lambda amount: amount * 0.05
 
