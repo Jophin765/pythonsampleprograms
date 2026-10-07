@@ -129,7 +129,7 @@ for row in range(1,number+1):
     for column in range(1,number+1):
         print(column,end="")
     print()
-"""
+
 #Left Side
 number=int(input("Enter the number:"))
 for row in range(1,number+1):
@@ -146,3 +146,45 @@ for row in range(1,number+1):
         
     print()
 
+
+numbers=[1,7,8,2,4]
+result=tuple(x**2 for x in numbers)
+print(result)
+
+
+cubes={item:item**3 for item in range(1,11)}
+print(cubes)
+
+
+
+elements=[2,4,2,6,7,9]
+even_numbers={item for item in elements if item%2==0}
+print(even_numbers)
+
+
+list_of_names=["John","C.C","Rize"]
+uppercase=[item.upper() for item in list_of_names]
+print(uppercase)
+check_letter=[item for item in list_of_names if "C" in item]
+print(check_letter)
+
+
+texts="Python programming"
+vowels=[item for item in texts if item in "aeiou"]
+print(vowels)
+unique={item for item in texts}
+print(unique)
+
+asci_code={item:ord(item) for item in texts} #ord => to generate asci code
+print(asci_code)
+
+
+
+languages=["Python","Java","C++"]
+lengths=[len(item) for item in languages]
+print(lengths)
+first_letter=[item[0] for item in languages]
+print(first_letter)
+first_char_with_length=[(item,len(item)) for item in languages]
+print(first_char_with_length)
+"""
