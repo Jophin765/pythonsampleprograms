@@ -32,7 +32,7 @@ print(sum_of_elements)  # eg 1+2=3 3+3=6 6+4=10 10+5=15
 def addition(num1, num2):
     return num1 + num2
 print(addition(2, 3))  # eg 2+3=5
-print(addition(2, 3))  
+print(addition(2, 3))
 
 
 def pure_function(numbers):# second characteristic of pure function is that it does not have any side effects(input values will not change but output will)
@@ -47,7 +47,7 @@ print(modified_list)
 print(original_list)  # original list will not change
 
 
-#First class function 
+#First class function
 #assign a function to a variable
 
 def greet(name):
@@ -72,7 +72,7 @@ def outer():
     return inner
 result=outer()
 result()
-"""
+
 
 #store function in a list
 def add(num1, num2):
@@ -91,3 +91,54 @@ def subtract(num1, num2):
 def calculate(operation, x, y):
     return operation(x,y)
 print(calculate(add, 5, 3))  # Output: 8
+
+#Iterator
+#to retrieve data one by one
+iter_list = iter([1, 2, 3,4, 5])
+print(next(iter_list))
+print(next(iter_list))
+
+
+
+
+# Generator
+# to generate data one by one
+def count_down(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+
+count = count_down(4)
+print(next(count))
+print(next(count))
+print(next(count))
+
+
+
+def square_num():
+    for i in range(1,11):
+        yield i*i
+square=square_num()
+print(next(square))
+print(next(square))
+
+"""
+
+#decorator
+# a function returns another function by adding a decorator to it
+def calculator(func):
+    def inner(*args):
+        print("Calculating two numbers")
+        result=func(*args)
+        print("Final output obtained:")
+        return result 
+    return inner
+@calculator
+def add(num1,num2):
+    return num1+num2
+@calculator
+def sub(num1,num2):
+    return num1-num2
+print(add(5,3))
+print(sub(5,3))
